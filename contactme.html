@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Profile | E-Resume</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f3ef 0%, #e8e2da 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Music Player Hidden */
+audio {
+    display: none;
+}
+
+/* Header */
+header {
+    background-color: #d8cec2;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+/* Navigation */
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.top-nav ul li a:hover {
+    color: #000;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Profile Circle */
+.profile-circle {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #f1ede7;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: profileEntrance 1s ease forwards;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.profile-circle img:hover {
+    transform: scale(1.1);
+}
+
+/* Name & Description */
+.profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 20px 0 8px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.profile-role {
+    font-size: 16px;
+    color: #555;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.profile-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+    animation: fadeIn 1.4s ease forwards;
+}
+
+/* Info Boxes */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    animation: infoEntrance 1s ease forwards;
+}
+
+.info-box {
+    background-color: #ffffffcc; /* pastel transparent */
+    border-radius: 10px;
+    padding: 18px 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.info-box:hover {
+    background-color: #f1ede7;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Emoji bling */
+.info-box span.emoji {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 18px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.info-box:hover span.emoji {
+    opacity: 1;
+    transform: scale(1.3) rotate(15deg);
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #777;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.value {
+    font-size: 14px;
+    color: #333;
+}
+
+.value a {
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Last box full width */
+.info-box.full {
+    grid-column: span 2;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Animations */
+@keyframes profileEntrance {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes infoEntrance {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-name {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Music autoplay -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Header -->
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+
+    <!-- Profile Circle -->
+    <div class="profile-circle">
+        <img src="picture/face.jpg" alt="Nur Fatihah">
+    </div>
+
+    <!-- Name & Description -->
+    <div class="profile-name">Nur Fatihah</div>
+    <div class="profile-role">Digital Citizenship Student | IMC414</div>
+    <div class="profile-desc">
+        A hardworking, passionate, and creative student with strong skills in digital media, web development, and information management.
+    </div>
+
+    <!-- Info Boxes (7 boxes exactly, last one full-width) -->
+    <div class="info-grid">
+        <div class="info-box"><div class="label">Age</div><div class="value">21 Years Old</div><span class="emoji">✨</span></div>
+        <div class="info-box"><div class="label">Student ID</div><div class="value">2023XXXXXX</div><span class="emoji">🎓</span></div>
+        <div class="info-box"><div class="label">Email</div><div class="value"><a href="mailto:nurfatihah@email.com">nurfatihah@email.com</a></div><span class="emoji">📧</span></div>
+        <div class="info-box"><div class="label">Address</div><div class="value">Kajang, Selangor, Malaysia</div><span class="emoji">📍</span></div>
+        <div class="info-box"><div class="label">LinkedIn</div><div class="value"><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></div><span class="emoji">💼</span></div>
+        <div class="info-box"><div class="label">Program Code</div><div class="value">IMC414</div><span class="emoji">📘</span></div>
+        <div class="info-box full"><div class="label">E-Resume</div><div class="value"><a href="https://youreresume.link" target="_blank">View My E-Resume</a></div><span class="emoji">🌟</span></div>
+    </div>
+
+    <footer>
+        © 2026 Nur Fatihah | E-Resume
+    </footer>
+</div>
+
+</body>
+</html>

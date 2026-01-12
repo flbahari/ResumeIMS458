@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | E-Resume</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f3ef 0%, #e8e2da 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #d8cec2;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+/* Navigation */
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+/* Main container */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+/* LEFT - About Me */
+.about-left {
+    flex: 0.6;
+    text-align: center;
+    position: relative;
+}
+
+.about-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease;
+}
+
+.about-left h2.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #f1ede7;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin-bottom: 18px;
+}
+
+.profile-img:hover {
+    transform: scale(1.07) rotate(2deg);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.profile-bio {
+    max-width: 280px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.profile-bio.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RIGHT - Info Timeline */
+.about-right {
+    flex: 1;
+    position: relative;
+    padding-left: 50px;
+}
+
+.about-right::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #d8cec2;
+    border-radius: 2px;
+}
+
+.info-row {
+    position: relative;
+    padding: 18px 25px;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+
+.info-row:hover {
+    background-color: #f1ede7;
+    transform: translateX(0) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.info-row::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background: #d8cec2;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #f5f3ef;
+}
+
+.info-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.info-value {
+    font-size: 14px;
+    color: #333;
+}
+
+.info-value a {
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 50px 0 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-left {
+        text-align: center;
+    }
+
+    .about-right {
+        padding-left: 0;
+    }
+
+    .about-right::before {
+        left: 0;
+    }
+
+    .info-row::before {
+        left: -25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="about-left">
+        <h2 id="about-title">About Me</h2>
+        <img src="picture/face.jpg" alt="Profile Image" class="profile-img">
+        <p class="profile-bio">
+            A hardworking and motivated Digital Citizenship student, passionate about responsible technology use, creative problem-solving, and continuously improving skills. Always eager to contribute to meaningful projects.
+        </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="about-right">
+        <div class="info-row">
+            <div class="info-label">Name</div>
+            <div class="info-value">Nur Fatihah</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Age</div>
+            <div class="info-value">21 Years Old</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Student ID</div>
+            <div class="info-value">2023XXXXXX</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Class</div>
+            <div class="info-value">IMC4A</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Program Code</div>
+            <div class="info-value">IMC414</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Email</div>
+            <div class="info-value"><a href="mailto:nurfatihah@email.com">nurfatihah@email.com</a></div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Address</div>
+            <div class="info-value">Kajang, Selangor, Malaysia</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">LinkedIn</div>
+            <div class="info-value"><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">E-Resume</div>
+            <div class="info-value"><a href="https://youreresume.link" target="_blank">View My E-Resume</a></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Nur Fatihah | E-Resume
+</footer>
+
+<script>
+// Scroll animation for info rows, title, and bio
+const rows = document.querySelectorAll('.info-row');
+const aboutTitle = document.getElementById('about-title');
+const profileBio = document.querySelector('.profile-bio');
+
+function showElements() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    // Info rows
+    rows.forEach(row => {
+        const rowTop = row.getBoundingClientRect().top;
+        if(rowTop < triggerBottom){
+            row.classList.add('show');
+            row.style.opacity = 1;
+            row.style.transform = 'translateX(0)';
+        }
+    });
+
+    // Title
+    const titleTop = aboutTitle.getBoundingClientRect().top;
+    if(titleTop < triggerBottom){
+        aboutTitle.classList.add('show');
+    }
+
+    // Bio
+    const bioTop = profileBio.getBoundingClientRect().top;
+    if(bioTop < triggerBottom){
+        profileBio.classList.add('show');
+    }
+}
+
+window.addEventListener('scroll', showElements);
+window.addEventListener('load', showElements);
+</script>
+
+</body>
+</html>

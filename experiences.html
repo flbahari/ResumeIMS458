@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience | E-Resume</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f3ef, #e8e4db, #f2ede4);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+header {
+    background-color: #d8cec2;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #333;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #3a3a3a;
+    text-align: center;
+}
+
+/* Full-width Experience Item */
+.experience-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animated Pastel Glow */
+.experience-item::before {
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: linear-gradient(45deg, #ffb3ba, #bae1ff, #baffc9, #fffeb3);
+    opacity:0;
+    border-radius:12px;
+    z-index:0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-item:hover::before {
+    opacity:0.25;
+}
+
+/* Arrow on hover */
+.experience-item::after {
+    content:"→";
+    font-size: 24px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover::after {
+    right: 20px;
+    opacity: 1;
+    color: #ffb3ba;
+}
+
+/* Hover transform */
+.experience-item:hover {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    background-color: #f7f2ec;
+}
+
+/* Left image */
+.experience-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid #e8e2da;
+    margin-right: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    z-index:1;
+}
+
+.experience-item img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    filter: drop-shadow(0 0 12px rgba(255,200,150,0.5));
+}
+
+/* Right info */
+.experience-info {
+    flex:1;
+    z-index:1;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #f1ede7;
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.experience-item:hover .job-title {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.job-date {
+    font-size: 13px;
+    color: #777;
+    margin-top: 6px;
+}
+
+.job-desc {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+/* Fade-in stagger animation */
+@keyframes fadeInUp {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+.experience-item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.experience-item:nth-child(1){animation-delay:0.2s;}
+.experience-item:nth-child(2){animation-delay:0.4s;}
+.experience-item:nth-child(3){animation-delay:0.6s;}
+.experience-item:nth-child(4){animation-delay:0.8s;}
+.experience-item:nth-child(5){animation-delay:1s;}
+.experience-item:nth-child(6){animation-delay:1.2s;}
+.experience-item:nth-child(7){animation-delay:1.4s;}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 50px 0 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .experience-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .experience-item img {
+        margin-right:0;
+        margin-bottom:12px;
+    }
+
+    .experience-info {
+        text-align: center;
+    }
+
+    .job-date {text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="section-title">Experience</div>
+
+    <!-- Experience Item 1 -->
+    <div class="experience-item">
+        <img src="picture/rejinah store.jpg" alt="Rejinah Store">
+        <div class="experience-info">
+            <div class="job-title">🛍 Rejinah Store Sdn.Bhd</div>
+            <div class="job-date">May 2023</div>
+            <div class="job-desc">
+                • Managed daily store operations and customer service.<br>
+                • Assisted in inventory management and stock control.<br>
+                • Learned teamwork and basic business management skills.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 2 -->
+    <div class="experience-item">
+        <img src="picture/shakenfloat cafe.jpeg" alt="Shake & Float Cafe">
+        <div class="experience-info">
+            <div class="job-title">☕ Shake & Float Cafe</div>
+            <div class="job-date">June 2023</div>
+            <div class="job-desc">
+                • Prepared beverages and desserts according to recipes.<br>
+                • Managed customer orders efficiently.<br>
+                • Gained experience in fast-paced food service environment.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 3 -->
+    <div class="experience-item">
+        <img src="picture/burger king.jpg" alt="Burger King">
+        <div class="experience-info">
+            <div class="job-title">🍔 Burger King</div>
+            <div class="job-date">March 2024</div>
+            <div class="job-desc">
+                • Took and processed customer orders accurately.<br>
+                • Maintained cleanliness and food safety standards.<br>
+                • Developed communication and teamwork skills.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 4 -->
+    <div class="experience-item">
+        <img src="picture/tea garden.jpg" alt="Tea Garden">
+        <div class="experience-info">
+            <div class="job-title">🍵 Tea Garden</div>
+            <div class="job-date">March 2025</div>
+            <div class="job-desc">
+                • Served customers and prepared beverages.<br>
+                • Assisted in stock management.<br>
+                • Learned customer interaction and hospitality skills.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 5 -->
+    <div class="experience-item">
+        <img src="picture/karkun pizza.jpg" alt="Karkun Pizza">
+        <div class="experience-info">
+            <div class="job-title">🍕 Karkun Pizza</div>
+            <div class="job-date">August 2025</div>
+            <div class="job-desc">
+                • Prepared pizza and assisted in kitchen operations.<br>
+                • Managed order packaging and delivery coordination.<br>
+                • Learned multitasking in a fast food environment.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 6 -->
+    <div class="experience-item">
+        <img src="picture/bingxue.jpg" alt="Bingxue">
+        <div class="experience-info">
+            <div class="job-title">🥤 Bingxue</div>
+            <div class="job-date">October 2025</div>
+            <div class="job-desc">
+                • Prepared drinks and maintained hygiene standards.<br>
+                • Assisted in customer service and daily operations.<br>
+                • Gained teamwork experience in a busy cafe setting.
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Item 7 -->
+    <div class="experience-item">
+        <img src="picture/zus.jpg" alt="ZusCoffee">
+        <div class="experience-info">
+            <div class="job-title">☕ ZusCoffee</div>
+            <div class="job-date">December 2025</div>
+            <div class="job-desc">
+                • Managed barista duties and customer orders.<br>
+                • Maintained cleanliness and stock levels.<br>
+                • Improved speed and efficiency under pressure.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Nur Fatihah | E-Resume
+    </footer>
+</div>
+
+</body>
+</html>

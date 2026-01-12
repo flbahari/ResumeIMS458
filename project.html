@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nur Fatihah | Projects & Events</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', sans-serif; background:linear-gradient(135deg,#f5f3ef,#e8e2da); color:#333; overflow-x:hidden; }
+
+/* HEADER */
+header {
+    background-color: #d8cec2;
+    padding: 18px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top:0;
+    z-index:10;
+}
+header h1 { font-family:'Playfair Display', serif; font-size:28px; }
+.top-nav ul { list-style:none; display:flex; gap:25px; }
+.top-nav ul li a { text-decoration:none; font-size:13px; letter-spacing:2px; color:#555; transition: color 0.3s, transform 0.3s; }
+.top-nav ul li a:hover { color:#000; transform: scale(1.05); }
+
+/* CONTAINER */
+.container { max-width:1050px; margin:40px auto; text-align:center; padding:0 20px; }
+
+/* PROJECT CARDS FULL WIDTH */
+.project-card {
+    background:#ffffffcc;
+    border-radius:15px;
+    padding:25px 30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position:relative;
+    margin-bottom:25px;
+    overflow:hidden;
+    text-align:left;
+}
+.project-card:hover { transform: scale(1.03); box-shadow:0 12px 28px rgba(0,0,0,0.18); }
+.project-card h3 { font-family:'Playfair Display', serif; font-size:20px; margin-bottom:10px; transition: font-weight 0.3s; }
+.project-card p { font-size:14px; color:#555; line-height:1.5; margin-bottom:10px; }
+.project-card .role, .project-card .tools { font-size:13px; color:#777; margin-bottom:5px; }
+.project-card:hover h3 { font-weight:bold; }
+
+/* EMOJIS FALL */
+.emoji-container { position:absolute; top:0; left:50%; transform:translateX(-50%); pointer-events:none; z-index:5; }
+
+/* SLIDER */
+.slider-container {
+    position: relative;
+    max-width:900px;
+    margin:50px auto;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    background:#fdfbf6;
+}
+
+.slider { display:flex; transition: transform 0.5s ease-in-out; }
+.slide { min-width:100%; transition: transform 0.5s ease-in-out; }
+.slide img { width:100%; height:auto; display:block; border-radius:12px; object-fit:cover; filter: brightness(0.95); transition: transform 0.4s ease; }
+.slide img:hover { transform: scale(1.05); }
+
+/* Slider Arrows */
+.prev,.next {
+    position:absolute; top:50%;
+    transform:translateY(-50%);
+    background-color: rgba(250,240,230,0.7);
+    border:none; padding:10px 16px; cursor:pointer; border-radius:50%;
+    font-size:20px; transition: background 0.3s ease;
+}
+.prev:hover,.next:hover { background-color:#f1ede7; }
+.prev { left:15px; }
+.next { right:15px; }
+
+/* FOOTER */
+footer { text-align:center; margin:40px 0 20px; font-size:13px; color:#888; }
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    .project-card { padding:20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2 style="font-family:'Playfair Display', serif; font-size:28px; margin-bottom:30px;">My Projects & Events</h2>
+
+    <!-- PROJECT CARDS FULL WIDTH -->
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Form 6 Event for Form 5 Students</h3>
+        <p>Organized an engaging educational event, coordinating activities for Form 5 students to encourage teamwork and learning.</p>
+        <div class="role"><strong>Role:</strong> Event Coordinator</div>
+        <div class="tools"><strong>Tools/Skills:</strong> Planning, Scheduling, Teamwork</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Southern Volunteer Event</h3>
+        <p>Led volunteers in community service projects, ensuring smooth execution and active participation.</p>
+        <div class="role"><strong>Role:</strong> Volunteer Leader</div>
+        <div class="tools"><strong>Tools/Skills:</strong> Leadership, Coordination, Communication</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Form 6 Farewell Day</h3>
+        <p>Planned and executed the farewell event, including logistics and participating in acting segments to enhance student experience.</p>
+        <div class="role"><strong>Role:</strong> Event Planner & Actor</div>
+        <div class="tools"><strong>Tools/Skills:</strong> Event Management, Creative Direction, Acting</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Website Creation Project</h3>
+        <p>Developed a full HTML website to showcase events and projects for students and volunteers.</p>
+        <div class="role"><strong>Role:</strong> Web Developer</div>
+        <div class="tools"><strong>Tools/Skills:</strong> HTML, CSS, Responsive Design</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Database Project</h3>
+        <p>Designed and implemented a structured database to manage event registration and attendance efficiently.</p>
+        <div class="role"><strong>Role:</strong> Database Designer</div>
+        <div class="tools"><strong>Tools/Skills:</strong> MS Excel, MySQL Concepts</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <div class="project-card" onmouseover="createEmojis(this)">
+        <h3>Acting & Shooting Events</h3>
+        <p>Participated in acting and shooting sessions as part of events, adding creativity and engaging experiences for students.</p>
+        <div class="role"><strong>Role:</strong> Actor & Performer</div>
+        <div class="tools"><strong>Tools/Skills:</strong> Acting, Direction, Teamwork</div>
+        <div class="emoji-container"></div>
+    </div>
+
+    <!-- IMAGE SLIDES -->
+    <div class="slider-container">
+        <h2 style="font-family:'Playfair Display', serif; font-size:28px; text-align:center; margin-bottom:15px;">Event Highlights</h2>
+        <div class="slider">
+            <div class="slide"><img src="picture/upsi.jpeg" alt="Event 1"></div>
+            <div class="slide"><img src="picture/join event.jpeg" alt="Event 2"></div>
+            <div class="slide"><img src="picture/join event 2.jpeg" alt="Event 3"></div>
+            <div class="slide"><img src="picture/join 3.jpeg" alt="Event 4"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+</div>
+
+<footer>© 2026 Nur Fatihah | E-Resume</footer>
+
+<script>
+// IMAGE SLIDER JS
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const slider = document.querySelector('.slider');
+    if(index >= totalSlides) currentIndex = 0;
+    else if(index < 0) currentIndex = totalSlides - 1;
+    else currentIndex = index;
+    slider.style.transform = `translateX(-${currentIndex*100}%)`;
+}
+
+document.querySelector('.prev').addEventListener('click', ()=>{ showSlide(currentIndex-1); });
+document.querySelector('.next').addEventListener('click', ()=>{ showSlide(currentIndex+1); });
+
+setInterval(()=>{ showSlide(currentIndex+1); },4000);
+
+// EMOJI FALL
+function createEmojis(card){
+    const container = card.querySelector('.emoji-container');
+    for(let i=0;i<6;i++){
+        const emoji = document.createElement('span');
+        emoji.innerText = '✨';
+        emoji.style.position = 'absolute';
+        emoji.style.fontSize = `${Math.random()*20+15}px`;
+        emoji.style.left = `${Math.random()*80+10}%`;
+        emoji.style.top = `0%`;
+        emoji.style.opacity = 1;
+        container.appendChild(emoji);
+        fall(emoji);
+    }
+}
+function fall(emoji){
+    let top=0;
+    const fallInterval = setInterval(()=>{
+        top+=2;
+        emoji.style.top = top+'px';
+        emoji.style.opacity -= 0.02;
+        if(top>120 || emoji.style.opacity<=0){
+            emoji.remove();
+            clearInterval(fallInterval);
+        }
+    },20);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education | E-Resume</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Animate.css for scroll animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #f5f3ef, #e8e4db, #f2ede4);
+        background-size: 400% 400%;
+        animation: gradientBG 20s ease infinite;
+        color: #333;
+    }
+
+    @keyframes gradientBG {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+
+    header {
+        background-color: #d8cec2;
+        padding: 18px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 25px;
+        color: #333;
+    }
+
+    .top-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 22px;
+    }
+
+    .top-nav ul li a {
+        text-decoration: none;
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: #555;
+    }
+
+    .container {
+        max-width: 1050px;
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .title {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #3a3a3a;
+    }
+
+    .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+    }
+
+    /* Card */
+    .edu-card {
+        background-color: #ffffff;
+        padding: 26px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.35s ease;
+    }
+
+    .edu-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+
+    /* Soft subtle gradient background */
+    .edu-card::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: linear-gradient(45deg, #f1ede7, #e9e3d8, #f5f3ef);
+        animation: rotateBG 10s linear infinite;
+        opacity: 0.08;
+        z-index: 0;
+        border-radius: 12px;
+        transition: opacity 0.3s ease, background 0.5s ease;
+    }
+
+    /* Flashy pastel motion when hover (or arrow hover) */
+    .edu-card:hover::before {
+        background: linear-gradient(45deg, #ffb3ba, #bae1ff, #baffc9, #fffeb3);
+        opacity: 0.3;
+    }
+
+    @keyframes rotateBG {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Logo */
+    .edu-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: contain;
+        background-color: #f5f3ef;
+        padding: 6px;
+        z-index: 1;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .edu-card:hover .edu-logo {
+        transform: scale(1.15) rotate(-3deg);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    .edu-content {
+        z-index: 1;
+    }
+
+    .edu-content h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        margin-bottom: 8px;
+        background-color: #f1ede7;
+        padding: 4px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        color: #3a3a3a;
+    }
+
+    .edu-content span {
+        font-size: 12px;
+        color: #888;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .edu-content p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    footer {
+        text-align: center;
+        margin: 50px 0 20px;
+        font-size: 13px;
+        color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .edu-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="title">Education Background</div>
+    <div class="edu-grid">
+
+        <!-- Sekolah Agama -->
+        <div class="edu-card animate__animated animate__fadeInUp">
+            <img src="picture/logo sabp.png" alt="Sekolah Agama Logo" class="edu-logo">
+            <div class="edu-content">
+                <h3>Sekolah Agama</h3>
+                <span>Primary Religious Education</span>
+                <p>
+                    UPKK: <strong>6A</strong><br>
+                    Darjah Khas: <strong>Pangkat 1</strong><br>
+                    🕌 Participated in Quran recitation competitions.<br>
+                    📚 Learned leadership & teamwork through class projects.<br>
+                    ⭐ Fun Fact: Won inter-school Islamic quiz.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sekolah Rendah -->
+        <div class="edu-card animate__animated animate__fadeInUp animate__delay-1s">
+            <img src="picture/logo sksb.png" alt="Sekolah Rendah Logo" class="edu-logo">
+            <div class="edu-content">
+                <h3>Sekolah Rendah</h3>
+                <span>Primary School</span>
+                <p>
+                    UPSR: <strong>4A</strong><br>
+                    🏅 Winner of school spelling bee competition.<br>
+                    🎨 Active in arts & craft exhibitions.<br>
+                    🌟 Fun Fact: Class president in Year 5.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sekolah Menengah -->
+        <div class="edu-card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="picture/logo smkdbd.jpeg" alt="Sekolah Menengah Logo" class="edu-logo">
+            <div class="edu-content">
+                <h3>Sekolah Menengah</h3>
+                <span>Secondary School</span>
+                <p>
+                    PT3: <strong>6A</strong><br>
+                    SPM: <strong>7A</strong><br>
+                    STPM: <strong>CGPA 3.84</strong><br>
+                    🎭 Participated in school drama & debate competitions.<br>
+                    🤝 Volunteered in community outreach programs.<br>
+                    🌟 Fun Fact: Head prefect in final year.
+                </p>
+            </div>
+        </div>
+
+        <!-- Universiti -->
+        <div class="edu-card animate__animated animate__fadeInUp animate__delay-3s">
+            <img src="picture/logo uitm.png" alt="UiTM Logo" class="edu-logo">
+            <div class="edu-content">
+                <h3>Universiti Teknologi MARA</h3>
+                <span>Bachelor’s Degree</span>
+                <p>
+                    Undergraduate Student<br>
+                    Universiti Teknologi MARA (UiTM)<br>
+                    💻 Active in coding & web development clubs.<br>
+                    🏆 Dean’s List Scholar (2025)<br>
+                    🌐 Currently developing personal projects & portfolio website.<br>
+                    🌟 Fun Fact: Led mini hackathon for classmates.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Nur Fatihah | E-Resume
+    </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>

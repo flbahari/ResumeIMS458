@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Resume | Landing Page</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f5f3ef, #e8e2da, #f0ebe5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* Header + Navigation (asal kekal) */
+header {
+    background-color: #d8cec2;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #555;
+    position: relative;
+    transition: 0.3s;
+}
+
+.top-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #555;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+}
+
+.top-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.top-nav ul li a:hover {
+    color: #000;
+}
+
+/* Main Layout */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Intro Content */
+.intro {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInSlide 1s forwards 0.5s;
+}
+
+.intro p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInSlide 1s forwards 1s;
+}
+
+/* Typing effect for welcome text */
+.intro .typing {
+    display: inline-block;
+    border-right: .15em solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end) forwards, blinkCaret .75s step-end infinite;
+}
+
+/* CTA Button */
+.intro a {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #ffd700;
+    color: #333;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    position: relative;
+    animation: fadeInSlide 1s forwards 1.5s;
+}
+
+.intro a::after {
+    content: '→';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.intro a:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.intro a:hover::after {
+    opacity: 1;
+    right: -40px;
+}
+
+/* Fade-in + slide animation */
+@keyframes fadeInSlide {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+    50% { border-color: transparent; }
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-50px) rotate(180deg); opacity: 0.6; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .intro h2 { font-size: 32px; }
+    .intro p { font-size: 14px; }
+    .intro a { padding: 12px 28px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>NUR FATIHAH</h1>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutme.html">ABOUTME</a></li>
+            <li><a href="educationbackground.html">EDUCATION</a></li>
+            <li><a href="experiences.html">EXPERIENCE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="#">CERTIFICATE</a></li>
+            <li><a href="contactme.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Intro Content -->
+    <div class="intro">
+        <h2><span class="typing">Hi, I’m Nur Fatihah!</span></h2>
+        <p>Welcome to my personal E-Resume & Portfolio. Explore my journey, experiences, and projects in a creative, interactive, and modern way. <br>Professional, hardworking, and ready to take on new challenges.</p>
+        <a href="aboutme.html">Discover More</a>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particle" style="width:12px; height:12px; top:20%; left:10%; animation-duration:6s;"></div>
+    <div class="particle" style="width:8px; height:8px; top:70%; left:80%; animation-duration:8s;"></div>
+    <div class="particle" style="width:10px; height:10px; top:40%; left:60%; animation-duration:5s;"></div>
+    <div class="particle" style="width:6px; height:6px; top:60%; left:30%; animation-duration:7s;"></div>
+
+</div>
+
+</body>
+</html>
